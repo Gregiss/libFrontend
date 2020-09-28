@@ -6,10 +6,14 @@ lib("h3").on("click", function(){
     } else{
         lib("h3").addClass("red")
     }
-    if(state.vezes >= 50){
-        return
+    if(state.vezes == 7){
+        lib().setState("vezes", function(){
+            return 0
+        })
     } else{
-        lib().setState("vezes", state.vezes++)
+        lib().setState("vezes", function(){
+            return state.vezes++
+        })
     }
 })
 

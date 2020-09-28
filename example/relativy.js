@@ -91,8 +91,8 @@ function lib(selector){
 				}
 			}
 		},
-		setState: (state, value) => {
-			state[state] = value
+		setState: (stateReceive, value) => {
+			state[stateReceive] = value()
 			self.stateChange()
 			return
 		},
