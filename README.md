@@ -51,6 +51,25 @@ select	Algum texto está sendo selecionado
 wheel	Foi detectada rotação no scroll do mouse
 ```
 
+
+#### States
+```
+Você pode atualizar as States em ./state.js
+
+Alterando algum State
+```
+
+```
+setState(State, função), precisa retornar o valor para setar
+```
+
+#### States set example
+```javascript
+lib().setState("vezes", function(){
+        return state.vezes >= 5 ? 0 : state.vezes++
+})
+```
+
 #### Example
 ```javascript
 lib("element").on('click', function({
