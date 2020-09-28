@@ -7,3 +7,7 @@ Its like with Jquery or Vue
 
 States = Variables
 SetState = Change Variables states
+
+#### Documentation
+
+Next soon
