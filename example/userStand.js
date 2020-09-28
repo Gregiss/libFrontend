@@ -9,6 +9,7 @@ lib("h3").on("click", function(){
     lib().setState("vezes", function(){
         return state.vezes >= 5 ? 0 : state.vezes++
     })
+    lib().changeTitle(`${state.vezes} - Clicado`)
 })
 
 // lib("h3").on("mouseenter", function(){

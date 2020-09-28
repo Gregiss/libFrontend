@@ -5,7 +5,6 @@ function isClickable(event){
 
 var variablesAntigas = []
 
-
 //Lib
 function lib(selector){
 	const self = {
@@ -104,6 +103,12 @@ function lib(selector){
 			component.innerHTML = functionRender().render
 			component.addEventListener('click', functionRender().methods)
 			self.stateChange()
+		},
+		forceUpdate: () => {
+			self.stateChange()
+		},
+		changeTitle: (title) => {
+			document.title = title
 		}
 	}
 	return self
