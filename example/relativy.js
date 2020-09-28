@@ -92,9 +92,9 @@ function lib(selector){
 			}
 		},
 		setState: (stateReceive, value) => {
-			state[stateReceive] = value()
+			console.clear(parseFloat(value()))
+			state[stateReceive] = parseFloat(value())
 			self.stateChange()
-			return
 		},
 		component: (functionRender) => {
 			const component = document.querySelector(functionRender().nameComponent)
