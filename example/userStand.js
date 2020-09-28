@@ -11,6 +11,17 @@ lib("h3").on("click", function(){
     })
 })
 
+// lib("h3").on("mouseenter", function(){
+//     if(lib("h3").hasClass("red")){
+//         lib("h3").removeClass("red")
+//     } else{
+//         lib("h3").addClass("red")
+//     }
+//     lib().setState("vezes", function(){
+//         return state.vezes >= 5 ? 0 : state.vezes++
+//     })
+// })
+
 const like = lib().component(function(){
     return object = {
         nameComponent: 'like',
