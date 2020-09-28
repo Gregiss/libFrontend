@@ -52,7 +52,7 @@ wheel	Foi detectada rotação no scroll do mouse
 ```
 
 #### Example
-```
+```javascript
 lib("element").on('click', function({
     //Code here
 }))
