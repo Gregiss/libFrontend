@@ -1,24 +1,12 @@
+//If is Clickable element
 function isClickable(event){
 	return event == 'click' ? true: false
 }
 
-function Relativo(object)
-{
-  var state = object
-  this.setState = setState;
-  this.show = show;
-
-  function show(state) {
-    return state[state]
-  }
-
-  function setState(state, value) {
-    state[state] = value;
-  }
-}
-
 var variablesAntigas = []
 
+
+//Lib
 function lib(selector){
 	const self = {
 		element: document.querySelector(selector) ? document.querySelector(selector) : null,

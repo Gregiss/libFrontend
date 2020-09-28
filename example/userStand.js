@@ -6,7 +6,11 @@ lib("h3").on("click", function(){
     } else{
         lib("h3").addClass("red")
     }
-    lib().setState("vezes", state.vezes++)
+    if(state.vezes >= 50){
+        return
+    } else{
+        lib().setState("vezes", state.vezes++)
+    }
 })
 
 const like = lib().component(function(){
