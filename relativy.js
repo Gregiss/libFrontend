@@ -33,7 +33,7 @@ function lib(selector){
 			return self.element.innerText
 		},
 		on: (event, callback) => {
-			document.addEventListener(event, callback)
+			self.element.addEventListener(event, callback)
 			isClickable(event) ? self.element.style.cursor = "pointer" : self.element.style.cursor = "default"
 		},
 		hide: () => {
