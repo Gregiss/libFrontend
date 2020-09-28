@@ -7,7 +7,7 @@ lib("h3").on("click", function(){
         lib("h3").addClass("red")
     }
     lib().setState("vezes", function(){
-            return state.vezes >= 5 ? 0 : state.vezes++
+        return state.vezes >= 5 ? 0 : state.vezes++
     })
 })
 
