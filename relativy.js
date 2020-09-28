@@ -33,8 +33,11 @@ function lib(selector){
 			return self.element.innerText
 		},
 		on: (event, callback) => {
-			self.element.addEventListener(event, callback)
-			isClickable(event) ? self.element.style.cursor = "pointer" : self.element.style.cursor = "default"
+			const documentQuery = document.querySelectorAll(selector)
+			for(let i = 0; i < documentQuery.length; i++){
+				documentQuery[i].addEventListener(event, callback)
+				isClickable(event) ? documentQuery[i].style.cursor = "pointer" : documentQuery[i].style.cursor = "default"
+			}
 		},
 		hide: () => {
 			self.element.style.display = "none"
@@ -51,14 +54,20 @@ function lib(selector){
 			if(value == null){
 				self.element.getAttribute('class')
 			} else{
-				self.element.setAttribute('class', value)
+				const documentQuery = document.querySelectorAll(selector)
+				for(let i = 0; i < documentQuery.length; i++){	
+					documentQuery[i].setAttribute('class', value)
+				}
 			}
 		},
 		removeClass: (value) => {
 			if(value == null){
 				self.element.getAttribute('class')
 			} else{
-				document.querySelector("h3").classList.remove("red")
+				const documentQuery = document.querySelectorAll(selector)
+				for(let i = 0; i < documentQuery.length; i++){	
+					documentQuery[i].classList.remove("red")
+				}
 			}
 		},
 		hasClass: (value) => {
@@ -90,6 +99,7 @@ function lib(selector){
 			for (let i = 0; i < documentQuery.length; i++) {
 				if(documentQuery[i].innerText != state[array[i]]){
 					documentQuery[i].innerText = state[array[i]]
+					documentQuery[i].setAttribute('class', `variable_${array[i]}`)
 				}
 			}
 		},
@@ -97,6 +107,15 @@ function lib(selector){
 			state[state] = value
 			self.stateChange()
 			return
+		},
+		component: (functionRender) => {
+			const component = document.querySelector(functionRender().nameComponent)
+			if(component == null){
+				return
+			}
+			component.innerHTML = functionRender().render
+			component.addEventListener('click', functionRender().methods)
+			self.stateChange()
 		}
 	}
 	return self
