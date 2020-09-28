@@ -82,14 +82,15 @@ function lib(selector){
 				array.push(elements[i].innerText)
 			}
 			variablesAntigas = array
-			
 			self.stateChange()
 		},
 		stateChange: () => {
 			const documentQuery = document.querySelectorAll("variable");
 			const array = variablesAntigas
 			for (let i = 0; i < documentQuery.length; i++) {
-				documentQuery[i].innerText = state[array[i]]
+				if(documentQuery[i].innerText != state[array[i]]){
+					documentQuery[i].innerText = state[array[i]]
+				}
 			}
 		},
 		setState: (state, value) => {
