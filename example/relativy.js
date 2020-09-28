@@ -53,7 +53,7 @@ function lib(selector){
 			} else{
 				const documentQuery = document.querySelectorAll(selector)
 				for(let i = 0; i < documentQuery.length; i++){	
-					documentQuery[i].classList.remove("red")
+					documentQuery[i].classList.remove(value)
 				}
 			}
 		},
