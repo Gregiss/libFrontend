@@ -52,8 +52,10 @@ wheel	Foi detectada rotação no scroll do mouse
 ```
 
 #### Example
-lib("element").on('event', function({
-
+```
+lib("element").on('click', function({
+    //Code here
 }))
+```
 
 Next soon
