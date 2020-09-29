@@ -13,8 +13,11 @@ function lib(selector){
 		bodyAntigo: null,
 		innerHtml: (value) => {
 			if(value != null){
-				self.element.innerText = value
+				self.element.innerHTML = value
 			}
+		},
+		value : () => {
+			return self.element.value
 		},
 		html: () => {
 			return self.element.innerText
@@ -86,13 +89,19 @@ function lib(selector){
 			for (let i = 0; i < documentQuery.length; i++) {
 				if(documentQuery[i].innerText != state[array[i]]){
 					documentQuery[i].innerText = state[array[i]]
-					documentQuery[i].setAttribute('class', `variable_${array[i]}`)
 				}
 			}
 		},
 		setState: (stateReceive, value) => {
-			console.clear(parseFloat(value()))
-			state[stateReceive] = parseFloat(value())
+			console.clear(value())
+			state[stateReceive] = value()
+			// if(typeof state[stateReceive] == 'object'){
+			// 	console.clear(value())
+			// 	state[stateReceive].push(value)
+			// 	return
+			// }
+			// console.clear(value())
+			// state[stateReceive] = value()
 			self.stateChange()
 		},
 		component: (functionRender) => {

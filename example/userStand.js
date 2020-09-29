@@ -1,42 +1,17 @@
-lib("h3").addClass("red")
-
-lib("h3").on("click", function(){
-    if(lib("h3").hasClass("red")){
-        lib("h3").removeClass("red")
-    } else{
-        lib("h3").addClass("red")
-    }
-    lib().setState("vezes", function(){
-        return state.vezes >= 5 ? 0 : state.vezes++
+lib("button").on('click', function(){
+    lib().setState("count", function(){
+        return state.count < 5 ? state.count++ : 0
     })
-    lib().changeTitle(`${state.vezes} - Clicado`)
 })
 
-// lib("h3").on("mouseenter", function(){
-//     if(lib("h3").hasClass("red")){
-//         lib("h3").removeClass("red")
-//     } else{
-//         lib("h3").addClass("red")
-//     }
-//     lib().setState("vezes", function(){
-//         return state.vezes >= 5 ? 0 : state.vezes++
-//     })
-// })
-
-const like = lib().component(function(){
-    return object = {
-        nameComponent: 'like',
-        state: {
-            cliques: 0
-        },
-        render: `
-        <button>
-            HELLO
-        </button>
-        `,
-        methods: () => {
-            console.log(object.state.cliques)
-            object.state.cliques++
-        }
+lib().component(function(){
+    return {
+    nameComponent: "like",
+    render: `
+        <h1>Teste</h1>
+    `,
+    methods: () => {
+        alert("teste")
     }
+}
 })

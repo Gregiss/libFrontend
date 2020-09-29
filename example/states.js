@@ -1,5 +1,5 @@
 //Make state
 var state = {
-    helloWorld: "teste",
-    vezes: 5
+    count: 2,
+    hello: 'helloWorld'
 }
