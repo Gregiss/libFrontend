@@ -10,8 +10,11 @@ lib().component(function(){
     render: `
         <h1>Teste</h1>
     `,
-    methods: () => {
-        alert("teste")
+    methods: {
+        mouse: 'click',
+        function: () => {
+            alert("teste")
+        }
     }
 }
 })

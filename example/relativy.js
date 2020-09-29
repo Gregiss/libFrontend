@@ -105,12 +105,14 @@ function lib(selector){
 			self.stateChange()
 		},
 		component: (functionRender) => {
-			const component = document.querySelector(functionRender().nameComponent)
-			if(component == null){
-				return
+			const components = document.querySelectorAll(functionRender().nameComponent)
+			for(let i = 0; i < components.length; i++){
+				if(components[i] == null){
+					return
+				}
+				components[i].innerHTML = functionRender().render
+				components[i].addEventListener(functionRender().methods.mouse, functionRender().methods.function)
 			}
-			component.innerHTML = functionRender().render
-			component.addEventListener('click', functionRender().methods)
 			self.stateChange()
 		},
 		forceUpdate: () => {
